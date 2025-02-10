@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Proposal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col items-center justify-center h-screen bg-pink-100 text-gray-800">
+    <h1 class="text-3xl font-bold mb-6">Will you be my blessed Valentine?</h1>
+    <div id="buttons" class="flex gap-4">
+        <button id="yes" class="bg-green-500 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-green-600" onclick="sayYes()">Yes</button>
+        <button id="no" class="bg-red-500 text-white px-6 py-3 rounded-lg text-lg font-semibold" onmouseover="moveNoButton()">No</button>
+    </div>
+
+    <script>
+        function moveNoButton() {
+            const button = document.getElementById("no");
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            button.classList.add('absolute');
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+
+        function sayYes() {
+            document.body.innerHTML = "<h1 class='text-4xl font-bold text-green-600'>I knew you would say YES!</h1>";
+        }
+    </script>
+</body>
+</html>
